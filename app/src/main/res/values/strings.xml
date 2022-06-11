@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Notes mvvm</string>
+    <string name="add_new_note">Add new note</string>
+    <string name="add">Add</string>
+    <string name="start_label">What to use?</string>
+    <string name="start_btn_room">ROOM</string>
+</resources>
