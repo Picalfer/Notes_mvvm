@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardElevation="@dimen/card_elevation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="@dimen/app_margin"
     app:cardCornerRadius="@dimen/card_corner_radius"
-    android:layout_height="wrap_content">
+    app:cardElevation="@dimen/card_elevation">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="@color/purple_200"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/purple_200">
 
         <TextView
             android:id="@+id/item_note_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/app_margin"
             android:gravity="center"
             android:lines="1"
             android:textColor="@color/mint"
             android:textSize="@dimen/app_large_text"
             android:textStyle="bold"
-            android:layout_margin="@dimen/app_margin"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Name note" />
 
         <TextView
+            android:id="@+id/item_note_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/item_note_text"
-            android:textSize="@dimen/app_normal_text"
-            app:layout_constraintTop_toBottomOf="@id/item_note_name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_margin="@dimen/app_margin"
-            tools:text="Note text"
-            android:textColor="@color/mint"/>
+            android:textColor="@color/mint"
+            android:textSize="@dimen/app_normal_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_note_name"
+            tools:text="Note text" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
