@@ -11,8 +11,8 @@ import com.example.notes_mvvm.utilits.TYPE_ROOM
 class StartFragmentViewModel(application: Application) : AndroidViewModel(application) {
     private val mContext = application
 
-    fun initDatabase(type: String, onSuccess:() -> Unit) {
-        when(type) {
+    fun initDatabase(type: String, onSuccess: () -> Unit) {
+        when (type) {
             TYPE_ROOM -> {
                 val dao = AppRoomDatabase.getInstance(mContext).getAppRoomDao()
                 REPOSITORY = AppRoomRepository(dao)
