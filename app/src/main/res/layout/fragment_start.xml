@@ -19,6 +19,8 @@
 
     <Button
         android:id="@+id/btn_room"
+        android:backgroundTint="@color/purple_200"
+        android:textColor="@color/mint"
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/app_margin"
@@ -26,5 +28,55 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btn_firebase"
+        android:layout_width="@dimen/btn_width"
+        android:backgroundTint="@color/purple_200"
+        android:textColor="@color/mint"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin"
+        android:text="@string/start_btn_firebase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_room" />
+
+    <EditText
+        android:id="@+id/input_email"
+        android:layout_width="@dimen/btn_width"
+        android:visibility="invisible"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin"
+        android:hint="@string/email_hint"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_firebase" />
+
+    <EditText
+        android:id="@+id/input_password"
+        android:layout_width="@dimen/btn_width"
+        android:visibility="invisible"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin"
+        android:hint="@string/password_hint"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_email" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="@dimen/btn_width"
+        android:visibility="invisible"
+        android:backgroundTint="@color/purple_200"
+        android:textColor="@color/mint"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin"
+        android:text="@string/start_btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
