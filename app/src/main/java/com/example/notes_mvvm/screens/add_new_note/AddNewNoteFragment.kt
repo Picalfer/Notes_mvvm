@@ -22,7 +22,7 @@ class AddNewNoteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAddNewNoteBinding.inflate(layoutInflater,container,false)
+        _binding = FragmentAddNewNoteBinding.inflate(layoutInflater, container, false)
         return mBinding.root
     }
 

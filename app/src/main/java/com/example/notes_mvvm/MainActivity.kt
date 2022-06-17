@@ -7,13 +7,14 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.notes_mvvm.databinding.ActivityMainBinding
 import com.example.notes_mvvm.utilits.APP_ACTIVITY
+import com.example.notes_mvvm.utilits.AppPreference
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var mToolbar: Toolbar
     lateinit var navController: NavController
     private var _binding: ActivityMainBinding? = null
-    val mBinding get() = _binding!! // переменная для использования байдинга где не будет проверки,
+    private val mBinding get() = _binding!! // переменная для использования байдинга где не будет проверки,
     // что он null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         setSupportActionBar(mToolbar)
         title = getString(R.string.title)
+        AppPreference.getPreference(this)
     }
 
     override fun onDestroy() {

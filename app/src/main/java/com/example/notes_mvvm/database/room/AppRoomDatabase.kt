@@ -8,7 +8,7 @@ import com.example.notes_mvvm.models.AppNote
 
 @Database(entities = [AppNote::class], version = 1)
 abstract class AppRoomDatabase : RoomDatabase() {
-    abstract fun getAppRoomDao() : AppRoomDao
+    abstract fun getAppRoomDao(): AppRoomDao
 
     companion object { // делаем сингл тон - чтобы не получилось так, что у нас 2 экземпляра
         // базы данных
@@ -17,7 +17,7 @@ abstract class AppRoomDatabase : RoomDatabase() {
         private var database: AppRoomDatabase? = null
 
         @Synchronized
-        fun getInstance(context: Context) : AppRoomDatabase {
+        fun getInstance(context: Context): AppRoomDatabase {
             return if (database == null) {
                 database = Room.databaseBuilder(context, AppRoomDatabase::class.java, "database")
                     .build()

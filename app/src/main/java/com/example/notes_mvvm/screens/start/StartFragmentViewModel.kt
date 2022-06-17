@@ -20,7 +20,7 @@ class StartFragmentViewModel(application: Application) : AndroidViewModel(applic
 
             TYPE_FIREBASE -> {
                 REPOSITORY = AppFirebaseRepository()
-                REPOSITORY.connectToDatabase({onSuccess()}, { showToast(it)})
+                REPOSITORY.connectToDatabase({ onSuccess() }, { showToast(it) })
             }
         }
     }
