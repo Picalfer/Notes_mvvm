@@ -6,4 +6,8 @@ import com.example.notes_mvvm.utilits.REPOSITORY
 
 class MainFragmentViewModel(application: Application) : AndroidViewModel(application) {
     val allNotes = REPOSITORY.allNotes
+
+    fun signOut() {
+        REPOSITORY.signOut()
+    }
 }

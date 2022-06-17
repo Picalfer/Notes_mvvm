@@ -13,6 +13,8 @@
         <action
             android:id="@+id/action_startFragment_to_mainFragment"
             app:destination="@id/mainFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_graph" />
     </fragment>
@@ -24,6 +26,8 @@
         <action
             android:id="@+id/action_addNewNoteFragment_to_mainFragment"
             app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_right_to_left_enter"
+            app:exitAnim="@anim/slide_right_to_left_out"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_graph" />
     </fragment>
@@ -34,13 +38,19 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_noteFragment"
-            app:destination="@id/noteFragment" />
+            app:destination="@id/noteFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
         <action
             android:id="@+id/action_mainFragment_to_addNewNoteFragment"
-            app:destination="@id/addNewNoteFragment" />
+            app:destination="@id/addNewNoteFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
         <action
             android:id="@+id/action_mainFragment_to_startFragment"
             app:destination="@id/startFragment"
+            app:enterAnim="@anim/slide_right_to_left_enter"
+            app:exitAnim="@anim/slide_right_to_left_out"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_graph" />
     </fragment>
@@ -52,6 +62,8 @@
         <action
             android:id="@+id/action_noteFragment_to_mainFragment"
             app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_right_to_left_enter"
+            app:exitAnim="@anim/slide_right_to_left_out"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_graph" />
     </fragment>
