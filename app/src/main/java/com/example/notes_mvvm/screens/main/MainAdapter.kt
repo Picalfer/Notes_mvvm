@@ -1,5 +1,6 @@
 package com.example.notes_mvvm.screens.main
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,6 +43,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainHolder>() {
 
     override fun getItemCount(): Int = mListNotes.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setList(list: List<AppNote>) {
         mListNotes = list
         notifyDataSetChanged()

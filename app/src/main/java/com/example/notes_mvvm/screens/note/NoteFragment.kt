@@ -3,16 +3,10 @@ package com.example.notes_mvvm.screens.note
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
-import androidx.recyclerview.widget.RecyclerView
 import com.example.notes_mvvm.R
-import com.example.notes_mvvm.databinding.FragmentMainBinding
 import com.example.notes_mvvm.databinding.FragmentNoteBinding
 import com.example.notes_mvvm.models.AppNote
-import com.example.notes_mvvm.screens.main.MainAdapter
-import com.example.notes_mvvm.screens.main.MainFragmentViewModel
 import com.example.notes_mvvm.utilits.APP_ACTIVITY
 
 class NoteFragment : Fragment() {

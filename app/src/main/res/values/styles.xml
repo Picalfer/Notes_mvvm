@@ -7,4 +7,10 @@
         <item name="android:inputType">text</item>
         <item name="android:layout_margin">@dimen/app_margin</item>
     </style>
+
+    <style name="btn_style">
+        <item name="android:backgroundTint">@color/purple_200</item>
+        <item name="android:textColor">@color/purple_600</item>
+        <item name="android:layout_width">@dimen/btn_width</item>
+    </style>
 </resources>

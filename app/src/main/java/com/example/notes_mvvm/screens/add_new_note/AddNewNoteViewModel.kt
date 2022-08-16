@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 class AddNewNoteViewModel(application: Application) : AndroidViewModel(application) {
 
     fun insert(note: AppNote, onSuccess: () -> Unit) =
-        viewModelScope.launch(Dispatchers.Main) { // в курсе здесь было IO и с ним не работало!
+        viewModelScope.launch(Dispatchers.Main) {
             REPOSITORY.insert(note) {
                 onSuccess()
             }
