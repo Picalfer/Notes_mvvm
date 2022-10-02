@@ -14,13 +14,12 @@ class MainActivity : AppCompatActivity() {
     lateinit var mToolbar: Toolbar
     lateinit var navController: NavController
     private var _binding: ActivityMainBinding? = null
-    private val mBinding get() = _binding!! // переменная для использования байдинга где не будет проверки,
-    // что он null
+    private val mBinding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
-        
+
         APP_ACTIVITY = this
         mToolbar = mBinding.toolbar
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
