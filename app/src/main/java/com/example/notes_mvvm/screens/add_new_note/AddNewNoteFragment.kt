@@ -20,7 +20,7 @@ class AddNewNoteFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentAddNewNoteBinding.inflate(layoutInflater, container, false)
         return mBinding.root

@@ -10,7 +10,8 @@ import com.example.notes_mvvm.models.AppNote
 abstract class AppRoomDatabase : RoomDatabase() {
     abstract fun getAppRoomDao(): AppRoomDao
 
-    companion object { // делаем сингл тон - чтобы не получилось так, что у нас 2 экземпляра
+    companion object {
+        // делаем сингл тон - чтобы не получилось так, что у нас 2 экземпляра
         // базы данных
 
         @Volatile

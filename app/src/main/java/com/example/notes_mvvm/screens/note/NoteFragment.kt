@@ -18,7 +18,7 @@ class NoteFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentNoteBinding.inflate(layoutInflater, container, false)
         mCurrentNote = arguments?.getSerializable("note") as AppNote

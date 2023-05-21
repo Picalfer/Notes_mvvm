@@ -21,7 +21,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainHolder>() {
     }
 
     override fun onViewAttachedToWindow(holder: MainHolder) {
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             MainFragment.click(mListNotes[holder.adapterPosition])
         }
     }
