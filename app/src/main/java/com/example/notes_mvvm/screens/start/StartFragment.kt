@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.notes_mvvm.R
@@ -19,7 +20,7 @@ class StartFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         _binding = FragmentStartBinding.inflate(layoutInflater, container, false)
         return mBinding.root
     }
@@ -46,9 +47,9 @@ class StartFragment : Fragment() {
         }
 
         mBinding.btnFirebase.setOnClickListener {
-            mBinding.inputEmail.visibility = View.VISIBLE
-            mBinding.inputPassword.visibility = View.VISIBLE
-            mBinding.btnLogin.visibility = View.VISIBLE
+            mBinding.inputEmail.visibility = VISIBLE
+            mBinding.inputPassword.visibility = VISIBLE
+            mBinding.btnLogin.visibility = VISIBLE
             mBinding.btnLogin.setOnClickListener {
                 val inputEmail = mBinding.inputEmail.text.toString()
                 val inputPassword = mBinding.inputPassword.text.toString()
