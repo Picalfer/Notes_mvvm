@@ -64,7 +64,8 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_email" />
+        app:layout_constraintTop_toBottomOf="@id/input_email"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btn_login"

@@ -11,4 +11,6 @@
     <string name="password_hint">password</string>
     <string name="start_btn_login">Login</string>
     <string name="toast_wrong_enter">Enter password and email</string>
+    <string name="hint_your_info">Your info</string>
+    <string name="hint_title">Title</string>
 </resources>
