@@ -15,19 +15,6 @@ class AppFirebaseRepository : DatabaseRepository {
 
     override val allNotes: LiveData<List<AppNote>> = AllNotesLiveData()
 
-    override suspend fun insert(note: AppNote, onSuccess: () -> Unit) {
-        val idNote = REF_DATABASE.push().key.toString()
-        val mapNote = hashMapOf<String, Any>()
-        mapNote[ID_FIREBASE] = idNote
-        mapNote[NAME] = note.name
-        mapNote[TEXT] = note.text
-
-        REF_DATABASE.child(idNote)
-            .updateChildren(mapNote)
-            .addOnSuccessListener { onSuccess() }
-            .addOnFailureListener { showToast(it.message.toString()) }
-    }
-
     override fun connectToDatabase(onSuccess: () -> Unit, onFail: (String) -> Unit) {
         if (AppPreference.getInitUser()) {
             initRefs()
@@ -49,6 +36,25 @@ class AppFirebaseRepository : DatabaseRepository {
         }
     }
 
+    override suspend fun insert(note: AppNote, onSuccess: () -> Unit) {
+        val idNote = REF_DATABASE.push().key.toString()
+        val mapNote = hashMapOf<String, Any>()
+        mapNote[ID_FIREBASE] = idNote
+        mapNote[NAME] = note.name
+        mapNote[TEXT] = note.text
+
+        REF_DATABASE.child(idNote)
+            .updateChildren(mapNote)
+            .addOnSuccessListener { onSuccess() }
+            .addOnFailureListener { showToast(it.message.toString()) }
+    }
+
+    override suspend fun delete(note: AppNote, onSuccess: () -> Unit) {
+        REF_DATABASE.child(note.idFirebase).removeValue()
+            .addOnSuccessListener { onSuccess() }
+            .addOnFailureListener { showToast(it.message.toString()) }
+    }
+
     private fun initRefs() {
         CURRENT_ID = AUTH.currentUser?.uid.toString()
         REF_DATABASE = FirebaseDatabase.getInstance().reference
@@ -57,11 +63,5 @@ class AppFirebaseRepository : DatabaseRepository {
 
     override fun signOut() {
         AUTH.signOut()
-    }
-
-    override suspend fun delete(note: AppNote, onSuccess: () -> Unit) {
-        REF_DATABASE.child(note.idFirebase).removeValue()
-            .addOnSuccessListener { onSuccess() }
-            .addOnFailureListener { showToast(it.message.toString()) }
     }
 }

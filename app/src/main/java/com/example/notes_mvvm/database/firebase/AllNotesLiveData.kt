@@ -10,15 +10,13 @@ import com.google.firebase.database.ValueEventListener
 class AllNotesLiveData : LiveData<List<AppNote>>() {
 
     private val listener = object : ValueEventListener {
-        override fun onDataChange(p0: DataSnapshot) {
-            value = p0.children.map {
+        override fun onDataChange(snapshot: DataSnapshot) {
+            value = snapshot.children.map {
                 it.getValue(AppNote::class.java) ?: AppNote()
             }
         }
 
-        override fun onCancelled(p0: DatabaseError) {
-
-        }
+        override fun onCancelled(p0: DatabaseError) {}
     }
 
     override fun onActive() {
